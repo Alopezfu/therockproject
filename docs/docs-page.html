@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="es"> 
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bootstrap 4 Template For Software Startups">
+    <meta name="author" content="Xiaoying Riley at 3rd Wave Media">    
+	<link rel="shortcut icon" href="favicon.ico">
+	<meta name="author" content="Aleajdnro López">
+	<meta name="author" content="Leandro Paredes">
+	<meta name="description" content="Trabajo fianl de curso 2019-20 ASIX">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap" rel="stylesheet">
+    <script defer src="assets/fontawesome/js/all.min.js"></script>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.2/styles/atom-one-dark.min.css">
+    <link id="theme-style" rel="stylesheet" href="assets/css/theme.css">    
+    <title>Docs - The Rock Project</title>
+</head> 
+<body class="docs-page">    
+    <header class="header fixed-top">	    
+        <div class="branding docs-branding">
+            <div class="container-fluid position-relative py-2">
+                <div class="docs-logo-wrapper">
+					<button id="docs-sidebar-toggler" class="docs-sidebar-toggler docs-sidebar-visible mr-2 d-xl-none" type="button"></button>
+	                <div class="site-logo"><a class="navbar-brand" href="index.html"><img class="logo-icon mr-2" src="assets/images/coderdocs-logo.svg" alt="logo"><span class="logo-text">The Rock Project<span class="text-alt"> Docs</span></span></a></div>    
+                </div>
+	            <div class="docs-top-utilities d-flex justify-content-end align-items-center">	
+					<ul class="social-list list-inline mx-md-3 mx-lg-5 mb-0 d-none d-lg-flex">
+						<li class="list-inline-item"><a href="https://github.com/Alopezfu/therockproject" target="_blank"><i class="fab fa-github fa-fw"></i></a></li>
+		            </ul>
+		            <a href="https://www.paypal.me/Alejandrolopez789" target="_blank" class="btn btn-primary d-none d-lg-flex">Donar</a>
+	            </div>
+            </div>
+        </div>
+    </header>
+    <div class="docs-wrapper">
+	    <div id="docs-sidebar" class="docs-sidebar">
+		    <div class="top-search-box d-lg-none p-3">
+                <form class="search-form">
+		            <input type="text" placeholder="Search the docs..." name="search" class="form-control search-input">
+		            <button type="submit" class="btn search-btn" value="Search"><i class="fas fa-search"></i></button>
+		        </form>
+            </div>
+		    <nav id="docs-nav" class="docs-nav navbar">
+			    <ul class="section-items list-unstyled nav flex-column pb-3">
+				    <li class="nav-item section-title"><a class="nav-link scrollto active" href="#section-1"><span class="theme-icon-holder mr-2"><i class="fas fa-map-signs"></i></span>Introducción</a></li>
+				    <li class="nav-item"><a class="nav-link scrollto" href="#item-1-1">La web</a></li>
+				    <li class="nav-item"><a class="nav-link scrollto" href="#item-1-2">El Clúster</a></li>
+				    <li class="nav-item"><a class="nav-link scrollto" href="#item-1-3">DNS</a></li>
+				    <li class="nav-item"><a class="nav-link scrollto" href="#item-1-4">Requisitos</a></li>
+				    <li class="nav-item section-title mt-3"><a class="nav-link scrollto" href="#section-2"><span class="theme-icon-holder mr-2"><i class="fas fa-arrow-down"></i></span>Instalación</a></li>
+				    <li class="nav-item"><a class="nav-link scrollto" href="#item-2-1">Instalar Docker</a></li>
+				    <li class="nav-item"><a class="nav-link scrollto" href="#item-2-2">Instalar Kubernetes</a></li>
+				    <li class="nav-item"><a class="nav-link scrollto" href="#item-2-3">Instalar Bind9</a></li>
+				    <li class="nav-item"><a class="nav-link scrollto" href="#item-2-5">Instalar LAMP</a></li>
+				    <li class="nav-item section-title mt-3"><a class="nav-link scrollto" href="#section-3"><span class="theme-icon-holder mr-2"><i class="fas fa-box"></i></span>Configuración</a></li>
+				    <li class="nav-item"><a class="nav-link scrollto" href="#item-3-1">Configurar Bind9</a></li>
+				    <li class="nav-item"><a class="nav-link scrollto" href="#item-3-3">Configurar Apache y MySql</a></li>
+				    <li class="nav-item section-title mt-3"><a class="nav-link scrollto" href="#section-4"><span class="theme-icon-holder mr-2"><i class="fas fa-cogs"></i></span>Creación del clúster</a></li>
+				    <li class="nav-item"><a class="nav-link scrollto" href="#item-4-1">Maestro</a></li>
+				    <li class="nav-item"><a class="nav-link scrollto" href="#item-4-2">Red</a></li>
+				    <li class="nav-item section-title mt-3"><a class="nav-link scrollto" href="#section-5"><span class="theme-icon-holder mr-2"><i class="fas fa-tools"></i></span>Traefik</a></li>
+				    <li class="nav-item"><a class="nav-link scrollto" href="#item-5-1">¿Que es Traefik?</a></li>
+					<li class="nav-item"><a class="nav-link scrollto" href="#item-5-2">Aplicar traefik a el clúster</a></li>				    <li class="nav-item section-title mt-3"><a class="nav-link scrollto" href="#section-6"><span class="theme-icon-holder mr-2"><i class="fas fa-laptop-code"></i></span>Web</a></li>
+				    <li class="nav-item section-title mt-3"><a class="nav-link scrollto" href="#section-8"><span class="theme-icon-holder mr-2"><i class="fas fa-book-reader"></i></span>Despliege de contenedores</a></li>
+				    <li class="nav-item"><a class="nav-link scrollto" href="#item-8-1">Bash Scripts</a></li>
+				    <li class="nav-item"><a class="nav-link scrollto" href="#item-8-2">PHP Scripts</a></li>
+				    <li class="nav-item"><a class="nav-link scrollto" href="#item-8-3">Linux</a></li>
+			    </ul>
+		    </nav>
+	    </div>
+	    <div class="docs-content">
+		    <div class="container">
+			    <article class="docs-article" id="section-1">
+				    <header class="docs-header">
+					    <h1 class="docs-heading">Introducción <span class="docs-time">Publicado el <strong>22 de may de 2020</strong></span></h1>
+					    <section class="docs-intro">
+						    <p>Este proyecto tiene como fin proveer una web de apache a gran escala con un cluster en Kubernetes, es decir tener una interfaz web donde los usuarios pagan una suscripción y obtiene un hosting de LAMP. Para llevarla a cabo el proyecto hemos utilizado todas estas tecnologías:</p>
+							<ul>
+								<li><strong class="mr-1">Docker</strong></li>
+								<li><strong class="mr-1">Kubernetes</strong></li>
+								<li><strong class="mr-1">Bash Scripting</strong></li>
+								<li><strong class="mr-1">HTML</strong></li>
+								<li><strong class="mr-1">CSS</strong></li>
+								<li><strong class="mr-1">JavaScript</strong></li>
+								<li><strong class="mr-1">Bootstrap Framework</strong></li>
+								<li><strong class="mr-1">PHP</strong></li>
+								<li><strong class="mr-1">Bind9</strong></li>
+								<li><strong class="mr-1">MySQL</strong></li>
+								<li><strong class="mr-1">Apache</strong></li>
+							</ul>
+							<p>En esta documentación mostramos cómo levantar un cluster de Kubernetes.</p>
+						</section>
+				    </header>
+				    <section class="docs-section" id="item-1-1">
+						<h2 class="section-heading">La web</h2>
+						<p>Las tecnologías que hemos empleado para la web son HTML, CSS, JavaScript para el front-end utilizando la plantilla <a href="https://github.com/BlackrockDigital/startbootstrap-sb-admin-2" target="_blank">SB Admin 2</a> y para la documentación la plantilla <a href="https://github.com/xriley/CoderDocs-Theme" target="_blank">CoderDocs Theme</a>. Y para
+						el back-end PHP y MySQL.</p>
+						<ul>
+							<li>Web de hosting: <a href="http://therockproject.com/admin/" target="_blank">therockproject.com/admin</a></li>
+							<li>Web documentación: <a href="https://alopezfu.github.io/therockproject/">therockproject.com/docs</a></li>
+						</ul>
+					</section>
+					
+					<section class="docs-section" id="item-1-2">
+						<h2 class="section-heading">El Clúster</h2>
+						<p>El clúster que vamos a montar es de Kubernetes y aquí tenemos un esquema de cómo funciona:</p>
+						<h5>Estos son los nodos que tenemos para el ejemplo:</h5>
+						<div class="table-responsive my-4">
+							<table class="table table-bordered">
+								<tbody>
+								    <tr>
+									    <th class="theme-bg-light">kube-master</th>
+									    <td>Este nodo es el que gestiona todo el cluster y se encarga de dar órdenes a el resto de nodos "workers". Además de la web, el DNS y la base de datos para la web.</td>
+									</tr>
+									<tr>
+									      <th class="theme-bg-light">kube-worker1</th>
+									      <td>Este es uno de los workeres del cluster, se repartirá la carga de trabajo con el kube-worker2.</td>
+									</tr>
+									<tr>
+									    <th class="theme-bg-light">kube-worker2</th>
+									    <td>Este es uno de los workeres del cluster, se repartirá la carga de trabajo con el kube-worker1.</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</section>					
+					<section class="docs-section" id="item-1-3">
+						<h2 class="section-heading">DNS</h2>
+						<p>Para resolver los dominios hemos utilizado <a href="https://wiki.debian.org/Bind9" target="_blank">bind9</a> que core en kube-master.</p>
+					</section>
+					<section class="docs-section" id="item-1-4">
+						<h2 class="section-heading">Requisitos</h2>
+						<p>Los requisitos para todos los nodos son 2 cores y 2 GB de memoria RAM.</p>
+					</section>		
+				</article>
+			    <article class="docs-article" id="section-2">
+				    <header class="docs-header">
+					    <h1 class="docs-heading">Instalación</h1>
+					    <section class="docs-intro">
+							<p>Contamos con 3 <a href="https://www.redeszone.net/gnu-linux/ubuntu-server-18-04-lts-instalacion-configuracion/" target="_blank">maquinas corriendo Ubuntu Server</a> en su versión 18.04 que tienen SSH y un <a href="https://www.tecmint.com/run-sudo-command-without-password-linux/" target="_blank">usuario configurado con visudo para que no solicite la contraseña al utilizar sudo</a> además de la siguiente configuración:</p>
+							<div class="table-responsive my-4">
+								<table class="table table-striped">
+									<thead>
+										<tr>
+											<th scope="col">Nombre</th>
+											<th scope="col">IP</th>
+											<th scope="col">Usuario</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>kube-master</td>
+											<td>192.168.1.200</td>
+											<td>kube</td>
+										</tr>
+										<tr>
+											<td>kube-worker1</td>
+											<td>192.168.1.201</td>
+											<td>kube</td>
+										</tr>
+										<tr>
+											<td>kube-worker2</td>
+											<td>192.168.1.202</td>
+											<td>kube</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</section>
+				    </header>
+				     <section class="docs-section" id="item-2-1">
+						<h2 class="section-heading">Instalar Docker</h2>
+						<p>Instalaremos Docker con el paquete docker.io, para ello:</p>
+						<div class="docs-code-block">
+							<pre class="shadow-lg rounded"><code class="json hljs"><span class="hljs-attr">kube@kube-master:~$ </span>sudo apt install docker.io</code></pre>
+						</div>
+						<p>También hemos de añadir a nuestro usuario al grupo de docker para ello modificaremos dicho usuario:</p>
+						<div class="docs-code-block">
+							<pre class="shadow-lg rounded"><code class="json hljs"><span class="hljs-attr">kube@kube-master:~$ </span>sudo usermod -aG docker $USER</code></pre>
+						</div>
+						<p>Por último habilitamos que Docker inicie al arranque de la máquina:</p>
+						<div class="docs-code-block">
+							<pre class="shadow-lg rounded"><code class="json hljs"><span class="hljs-attr">kube@kube-master:~$ </span>sudo systemctl enable docker</code></pre>
+						</div>
+						<div class="callout-block callout-block-info">
+                            <div class="content">
+                                <h4 class="callout-title">
+	                                <span class="callout-icon-holder mr-1">
+		                                <svg class="svg-inline--fa fa-info-circle fa-w-16" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="info-circle" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z"></path></svg><!-- <i class="fas fa-info-circle"></i> -->
+		                            </span>
+	                                Nota
+	                            </h4>
+                                <p>Estos pasos deben realizarse en los 3 nodos.</p>
+                            </div>
+                        </div>
+					</section>
+					<section class="docs-section" id="item-2-2">
+						<h2 class="section-heading">Instalar Kubernetes</h2>
+						<p>El primer paso para instalar Kubernetes es añadir la clave de Kubernetes con apt-key.</p>
+						<div class="docs-code-block">
+							<pre class="shadow-lg rounded"><code class="json hljs"><span class="hljs-attr">kube@kube-master:~$ </span>curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add</code></pre>
+						</div>
+						<p>Ahora añadimos el repositorio con apt-add-repository.</p>
+						<div class="docs-code-block">
+							<pre class="shadow-lg rounded"><code class="json hljs"><span class="hljs-attr">kube@kube-master:~$ </span>sudo apt-add-repository "deb http://apt.kubernetes.io/ kubernetes-xenial main"</code></pre>
+						</div>
+						<p>E instalamos con apt.</p>
+						<div class="docs-code-block">
+							<pre class="shadow-lg rounded"><code class="json hljs"><span class="hljs-attr">kube@kube-master:~$ </span>sudo apt install kubeadm</code></pre>
+						</div>
+						<div class="callout-block callout-block-info">
+                            <div class="content">
+                                <h4 class="callout-title">
+	                                <span class="callout-icon-holder mr-1">
+		                                <svg class="svg-inline--fa fa-info-circle fa-w-16" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="info-circle" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z"></path></svg><!-- <i class="fas fa-info-circle"></i> -->
+		                            </span>
+	                                Nota
+	                            </h4>
+                                <p>Estos pasos deben realizarse en los 3 nodos.</p>
+                            </div>
+                        </div>
+					</section>
+					<section class="docs-section" id="item-2-3">
+						<h2 class="section-heading">Instalar Bind9</h2>
+						<p>Solo hemos de utilizar apt para instalar bind9.</p>
+						<div class="docs-code-block">
+							<pre class="shadow-lg rounded"><code class="json hljs"><span class="hljs-attr">kube@kube-master:~$ </span>sudo apt install bind9</code></pre>
+						</div>
+						<p>Por último habilitamos bind9 el el arranque de la máquina.</p>
+						<div class="docs-code-block">
+							<pre class="shadow-lg rounded"><code class="json hljs"><span class="hljs-attr">kube@kube-master:~$ </span>sudo systemctl enable bind9</code></pre>
+						</div>
+						<div class="callout-block callout-block-info">
+                            <div class="content">
+                                <h4 class="callout-title">
+	                                <span class="callout-icon-holder mr-1">
+		                                <svg class="svg-inline--fa fa-info-circle fa-w-16" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="info-circle" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z"></path></svg><!-- <i class="fas fa-info-circle"></i> -->
+		                            </span>
+	                                Nota
+	                            </h4>
+                                <p>Estos pasos solo deben realizarse en kube-master.</p>
+                            </div>
+                        </div>
+					</section>
+					<section class="docs-section" id="item-2-5">
+						<h2 class="section-heading">Instalar LAMP</h2>
+						<p>Ahora instalamos Apache Mysql y PHP.</p>
+						<div class="docs-code-block">
+							<pre class="shadow-lg rounded"><code class="json hljs"><span class="hljs-attr">kube@kube-master:~$ </span>sudo apt install lamp-server^</code></pre>
+						</div>
+						<div class="callout-block callout-block-info">
+                            <div class="content">
+                                <h4 class="callout-title">
+	                                <span class="callout-icon-holder mr-1">
+		                                <svg class="svg-inline--fa fa-info-circle fa-w-16" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="info-circle" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z"></path></svg><!-- <i class="fas fa-info-circle"></i> -->
+		                            </span>
+	                                Nota
+	                            </h4>
+                                <p>Estos pasos solo deben realizarse en kube-master.</p>
+                            </div>
+						</div>
+						<div class="callout-block callout-block-info">
+                            <div class="content">
+                                <h4 class="callout-title">
+	                                <span class="callout-icon-holder mr-1">
+		                                <svg class="svg-inline--fa fa-info-circle fa-w-16" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="info-circle" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z"></path></svg><!-- <i class="fas fa-info-circle"></i> -->
+		                            </span>
+	                                Nota
+	                            </h4>
+                                <p>Se recomienda reiniciar todos los nodos una vez instalado todo lo de los pasos anteriores.</p>
+                            </div>
+                        </div>
+					</section>
+				</article>
+
+			    <article class="docs-article" id="section-3">
+				    <header class="docs-header">
+					    <h1 class="docs-heading">Configuración</h1>
+				    </header>
+				     <section class="docs-section" id="item-3-1">
+						<h2 class="section-heading">Configurar Bind9</h2>
+						<p>En el directorio /etc/bind es donde configuraremos nuestro dns, tendremos que crear un
+							directorio de zonas y editar/crear los ficheros de zonas.</p>
+						<div class="docs-code-block">
+							<pre class="shadow-lg rounded"><code class="json hljs"><span class="hljs-attr">kube@kube-master:/etc/bind$ </span>sudo mkdir zonas</code></pre>
+						</div>
+						<p>Vamos a configurar una zona en el fichero named.config.local.</p>
+						<div class="docs-code-block">
+							<pre class="shadow-lg rounded"><code class="json hljs"><span class="hljs-attr">kube@kube-master:/etc/bind$ </span>sudo cp named.conf.local named.conf.bak</code></pre>
+						</div>
+						<p>named.config.local devería de verse algo así:</p>
+						<div class="docs-code-block">
+							<img src="img/bind9/1.png">
+						</div>
+						<p>Creamos el fichero de la zona en zonas/rock.db.</p>
+						<div class="docs-code-block">
+							<pre class="shadow-lg rounded"><code class="json hljs"><span class="hljs-attr">kube@kube-master:/etc/bind$ </span>sudo cp db.empty zonas/rock.db</code></pre>
+						</div>
+						<p>zonas/rock.db devería de verse algo así:</p>
+						<div class="docs-code-block">
+							<img src="img/bind9/2.png">
+						</div>
+						<p>Para resolver nombres de internet  haremos un forwarder al servidor de google 8.8.8.8 en el fichero named.conf.options</p>
+						<div class="docs-code-block">
+							<img src="img/bind9/3.png">
+						</div>
+					</section>
+
+					<section class="docs-section" id="item-3-3">
+						<h2 class="section-heading">Configurar Apache y MySql</h2>
+						<p>En apache vamos a configurar la página de error 404, para ello modificamos el fichero /etc/apache2/sites-available/000-default.conf que devería de verse algo así:</p>
+						<div class="docs-code-block">
+							<img src="img/apache/1.png">
+						</div>
+						<p>En MySql vamos crear un usuario llamado dev y la base de datos que será utilizado en la web de gestión.</p>
+						<p>Crear el usuario:</p>
+						<div class="docs-code-block">
+							<pre class="shadow-lg rounded"><code class="json hljs"><span class="hljs-attr">kube@kube-master:~$ </span>sudo mysql</code></pre>
+						</div>
+						<div class="docs-code-block">
+							<pre class="shadow-lg rounded"><code class="json hljs"><span class="hljs-attr">mysql> </span>CREATE USER 'dev'@'localhost' IDENTIFIED BY 'dev';</code></pre>
+						</div>
+						<div class="docs-code-block">
+							<pre class="shadow-lg rounded"><code class="json hljs"><span class="hljs-attr">mysql> </span>GRANT ALL PRIVILEGES ON therockproject.* TO 'dev'@'localhost';</code></pre>
+						</div>
+						<p>Crear la base de datos:</p>
+						<div class="docs-code-block">
+							<pre class="shadow-lg rounded"><code class="json hljs"><span class="hljs-attr">kube@kube-master:~$ </span>sudo mysql</code></pre>
+						</div>
+						<div class="docs-code-block">
+							<pre class="shadow-lg rounded"><code class="json hljs"><span class="hljs-attr">mysql> </span>CREATE DATABASE therockproject;</code></pre>
+						</div>
+					</section>
+				</article>
+				
+			    <article class="docs-article" id="section-4">
+				    <header class="docs-header">
+					    <h1 class="docs-heading">Creación del clúster</h1>
+					    <section class="docs-intro">
+						    <p>Antes de crear el cluster hemos de deshabilitar la memoria swap <strong>en todos los nodos</strong>, puesto que es un requerimiento en el cluster de kubernetes.</p>
+							<p>Con swapoff lo deshabilitamos en la sesión actual y comentado la línea de swap en /etc/fstab lo aplicamos de manera permanente.</p>
+							<div class="docs-code-block">
+								<pre class="shadow-lg rounded"><code class="json hljs"><span class="hljs-attr">kube@kube-master:~$ </span>sudo swapoff -a</code></pre>
+							</div>
+							<div class="docs-code-block">
+								<pre class="shadow-lg rounded"><code class="json hljs"><span class="hljs-attr">kube@kube-master:~$ </span>sudo nano /etc/fstab</code></pre>
+							</div>
+							<p>Ejemplo /etc/fstab</p>
+							<div class="docs-code-block">
+								<img src="img/fstab/1.png">
+							</div>
+						</section>
+				    </header>
+				     <section class="docs-section" id="item-4-1">
+						<h2 class="section-heading">Maestro</h2>
+						<p>En el nodo kube-master vamos a crear el cluster.</p>
+						<p>Para iniciar el cluster, el parámetro --pod-network-cidr especifica la red de los pods del cluster.</p>
+						<div class="docs-code-block">
+							<pre class="shadow-lg rounded"><code class="json hljs"><span class="hljs-attr">kube@kube-master:~$ </span>sudo kubeadm init --pod-network-cidr=10.244.0.0/16</code></pre>
+						</div>
+						<p>Una vez termine la creación es importante guardar la última línea que la salida del comando init, esta nos permitirá añadir nodos al cluster.</p>
+						<p>Ejemplo:</p>
+						<div class="docs-code-block">
+							<img src="img/cluster/1.png" style="width: 1000px;">
+						</div>
+						<p>Ahora creamos la configuración del cluster con las  siguientes órdenes:</p>
+						<div class="docs-code-block">
+							<pre class="shadow-lg rounded"><code class="json hljs"><span class="hljs-attr">kube@kube-master:~$ </span>mkdir -p $HOME/.kube</code></pre>
+						</div>
+						<div class="docs-code-block">
+							<pre class="shadow-lg rounded"><code class="json hljs"><span class="hljs-attr">kube@kube-master:~$ </span>sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config</code></pre>
+						</div>
+						<div class="docs-code-block">
+							<pre class="shadow-lg rounded"><code class="json hljs"><span class="hljs-attr">kube@kube-master:~$ </span>sudo chown $(id -u):$(id -g) $HOME/.kube/config</code></pre>
+						</div>
+						<p>Ahora nuestro cluster está creado a nivel muy básico. En los workers ejecutamos la comida que hemos guardado antes.</p>
+						<div class="docs-code-block">
+							<pre class="shadow-lg rounded"><code class="json hljs"><span class="hljs-attr">kube@kube-worker1:~$ </span>sudo kubeadm join ipMaster:6443 --token tuToken \
+--discovery-token-ca-cert-hash tuhashTocken</code></pre>
+						</div>
+					</section><!--//section-->
+					
+					<section class="docs-section" id="item-4-2">
+						<h2 class="section-heading">Red</h2>
+						<p>Si ahora hacemos un <strong>kubectl get nodes</strong> el STATUS de los nodos NotReady, es normal ya que no están del todo configurados, vamos a ello.</p>
+						<div class="docs-code-block">
+							<pre class="shadow-lg rounded"><code class="json hljs"><span class="hljs-attr">kube@kube-worker1:~$ </span>sudo kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml</code></pre>
+						</div>
+						<p>Una vez aplicado el cambio el estado de los nodos en poco segundo cambiará a Ready, y asi de facil tenemos nuestro cluster funcionando.</p>
+					</section><!--//section-->
+					
+			    </article><!--//docs-article-->
+			    
+			    <article class="docs-article" id="section-5">
+				    <header class="docs-header">
+					    <h1 class="docs-heading">Traefik</h1>
+				    </header>
+				     <section class="docs-section" id="item-5-1">
+						<h2 class="section-heading">¿Que es Traefik?</h2>
+						<p>Traefik es un balanceador y un reverse proxy que nos permite redirigir peticiones mediante una URL, es por eso que hemos creado los registros *.rock.com a los dos workers por que en cuanto lleguen a los nodos Traefki se encarga de redirigir la petición al contenedor deseado.</p>
+					</section><!--//section-->
+					
+					<section class="docs-section" id="item-5-2">
+						<h2 class="section-heading">Aplicar traefik a el clúster</h2>
+						<p>Solo tenemos que hacer lo siguiente desde el nodo maestro.</p>
+						<div class="docs-code-block">
+							<pre class="shadow-lg rounded"><code class="json hljs"><span class="hljs-attr">kube@kube-master:~$ </span>kubectl apply -f https://github.com/xxx</code></pre>
+						</div>
+						<p>Una vez hecho esto podemos ir a traefik.rock.com para ver el dashboard de Traefik.</p>
+					</section><!--//section-->
+			    </article><!--//docs-article-->
+			    
+			    
+		        <article class="docs-article" id="section-6">
+				    <header class="docs-header">
+					    <h1 class="docs-heading">Web</h1>
+					    <section class="docs-intro">
+						    <p>Puedes ver el código fuente de la aplicación que administra las suscripciones a The Rock Project en nuestro repo oficial de <a href="#">GitHub</a>.</p>
+						</section><!--//docs-intro-->
+				    </header>
+			    </article><!--//docs-article-->		    
+			    
+			    <article class="docs-article" id="section-8">
+				    <header class="docs-header">
+					    <h1 class="docs-heading">Despliege de contenedores</h1>
+					    <section class="docs-intro">
+						    <p>Ahora explicaremos cómo hemos hecho para desplegar los contenedores cuando los usuarios se registran.</p>
+						</section><!--//docs-intro-->
+				    </header>
+				     <section class="docs-section" id="item-8-1">
+						<h2 class="section-heading">Bash Scripts</h2>
+						<p>Lo primero que hemos hecho es definir un Deployment, Ingress y un service y con bash modificamos algunos parámetros de manera automática, <a href="#">ver el script</a>.</p>
+					</section><!--//section-->
+					
+					<section class="docs-section" id="item-8-2">
+						<h2 class="section-heading">PHP Scripts</h2>
+						<p>Vivamus efficitur fringilla ullamcorper. Cras condimentum condimentum mauris, vitae facilisis leo. Aliquam sagittis purus nisi, at commodo augue convallis id. Sed interdum turpis quis felis bibendum imperdiet. Mauris pellentesque urna eu leo gravida iaculis. In fringilla odio in felis ultricies porttitor. Donec at purus libero. Vestibulum libero orci, commodo nec arcu sit amet, commodo sollicitudin est. Vestibulum ultricies malesuada tempor.</p>
+					</section><!--//section-->
+					
+					<section class="docs-section" id="item-8-3">
+							<h2 class="section-heading">Linux</h2>
+						<p>Vivamus efficitur fringilla ullamcorper. Cras condimentum condimentum mauris, vitae facilisis leo. Aliquam sagittis purus nisi, at commodo augue convallis id. Sed interdum turpis quis felis bibendum imperdiet. Mauris pellentesque urna eu leo gravida iaculis. In fringilla odio in felis ultricies porttitor. Donec at purus libero. Vestibulum libero orci, commodo nec arcu sit amet, commodo sollicitudin est. Vestibulum ultricies malesuada tempor.</p>
+					</section><!--//section-->
+				</article><!--//docs-article-->
+				
+			    <footer class="footer">
+				    <div class="container text-center py-5">
+				        <small class="copyright">Documentado por <a class="theme-link" href="https://github.com/Alopezfu" target="_blank">Alejandro López</a> y <a class="theme-link" href="https://github.com/Arsenbasha" target="_blank">Leandro Paredes</a></small>
+				        <ul class="social-list list-unstyled pb-4 mb-0">
+							<li class="list-inline-item"><a href="https://github.com/Alopezfu/therockproject" target="_blank"><i class="fab fa-github fa-fw"></i></a></li> 
+						</ul>
+				    </div>
+			    </footer>
+		    </div> 
+	    </div>
+    </div>
+    <script src="assets/plugins/jquery-3.4.1.min.js"></script>
+    <script src="assets/plugins/popper.min.js"></script>
+    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
+    <script src="assets/js/highlight-custom.js"></script> 
+    <script src="assets/plugins/jquery.scrollTo.min.js"></script>
+    <script src="assets/plugins/lightbox/dist/ekko-lightbox.min.js"></script> 
+    <script src="assets/js/docs.js"></script> 
+</body>
+</html> 
+

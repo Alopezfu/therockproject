@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Documentación Oficial The Rock Project">
+    <meta name="author" content="Xiaoying Riley at 3rd Wave Media">    
+	<link rel="shortcut icon" href="favicon.ico">
+	<meta name="author" content="Aleajdnro López">
+	<meta name="author" content="Leandro Paredes">
+	<meta name="description" content="Trabajo fianl de curso 2019-20 ASIX">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap" rel="stylesheet">
+    <script defer src="assets/fontawesome/js/all.min.js"></script>
+    <link id="theme-style" rel="stylesheet" href="assets/css/theme.css">
+    <title>Docs - The Rock Project</title>
+</head>
+<body>
+    <header class="header fixed-top">
+        <div class="branding docs-branding">
+            <div class="container-fluid position-relative py-2">
+                <div class="docs-logo-wrapper">
+	                <div class="site-logo"><a class="navbar-brand" href="index.html"><img class="logo-icon mr-2" src="assets/images/coderdocs-logo.svg" alt="logo"><span class="logo-text">The Rock Project<span class="text-alt"> Docs</span></span></a></div>    
+                </div>
+	            <div class="docs-top-utilities d-flex justify-content-end align-items-center">
+					<ul class="social-list list-inline mx-md-3 mx-lg-5 mb-0 d-none d-lg-flex">
+						<li class="list-inline-item"><a href="https://github.com/Alopezfu/therockproject" target="_blank"target="_blank"><i class="fab fa-github fa-fw"></i></a></li>
+		            </ul>
+		            <a href="https://www.paypal.me/Alejandrolopez789" target="_blank" class="btn btn-primary d-none d-lg-flex">Donar</a>
+	            </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="page-header theme-bg-dark py-5 text-center position-relative">
+	    <div class="theme-bg-shapes-right"></div>
+	    <div class="theme-bg-shapes-left"></div>
+	    <div class="container">
+		    <h1 class="page-heading single-col-max mx-auto">The Rock Project</h1>
+		    <div class="page-intro single-col-max mx-auto">- Documentación Oficial -</div>
+	    </div>
+    </div>
+    <div class="page-content">
+	    <div class="container">
+		    <div class="docs-overview py-5">
+			    <div class="row justify-content-center">
+				    <div class="col-12 col-lg-4 py-3">
+					    <div class="card shadow-sm">
+						    <div class="card-body">
+							    <h5 class="card-title mb-3">
+								    <span class="theme-icon-holder card-icon-holder mr-2">
+								        <i class="fas fa-map-signs"></i>
+							        </span>
+							        <span class="card-title-text">Introducción</span>
+							    </h5>
+							    <div class="card-text">
+								    Este proyecto tiene como fin proveer hosting a gran escala con un cluster en Kubernetes, es decir tener una interfaz web donde los usuarios pagan una suscripción y obtiene un hosting. ver más...
+							    </div>
+							    <a class="card-link-mask" href="docs-page.html#section-1"></a>
+						    </div>
+					    </div>
+				    </div>
+				    <div class="col-12 col-lg-4 py-3">
+					    <div class="card shadow-sm">
+						    <div class="card-body">
+							    <h5 class="card-title mb-3">
+								    <span class="theme-icon-holder card-icon-holder mr-2">
+								        <i class="fas fa-arrow-down"></i>
+							        </span>
+							        <span class="card-title-text">Instalación</span>
+							    </h5>
+							    <div class="card-text">
+								    Contamos con 3 maquinas corriendo Ubuntu Server en su versión 18.04 que tienen SSH y un usuario configurado con visudo para que no solicite la contraseña al utilizar sudo ademas de la siguiente configuración. ver más...
+							    </div>
+							    <a class="card-link-mask" href="docs-page.html#section-2"></a>
+						    </div>
+					    </div>
+				    </div>
+				    <div class="col-12 col-lg-4 py-3">
+					    <div class="card shadow-sm">
+						    <div class="card-body">
+							    <h5 class="card-title mb-3">
+								    <span class="theme-icon-holder card-icon-holder mr-2">
+								        <i class="fas fa-box fa-fw"></i>
+							        </span>
+							        <span class="card-title-text">Configuración</span>
+							    </h5>
+							    <div class="card-text">
+									Configuraremos los servicios del cluster DNS y Apache. ver más...					    
+								</div>
+							    <a class="card-link-mask" href="docs-page.html#section-3"></a>
+						    </div>
+					    </div>
+				    </div>
+				    <div class="col-12 col-lg-4 py-3">
+					    <div class="card shadow-sm">
+						    <div class="card-body">
+							    <h5 class="card-title mb-3">
+								    <span class="theme-icon-holder card-icon-holder mr-2">
+								        <i class="fas fa-cogs fa-fw"></i>
+							        </span>
+							        <span class="card-title-text">Creación del clúster</span>
+							    </h5>
+							    <div class="card-text">
+								    Antes de crear el cluster hemos de deshabilitar la memoria swap <strong>en todos los nodos</strong>, puesto que es un requerimiento en el cluster de kubernetes. ver más...						    
+								</div>
+							    <a class="card-link-mask" href="docs-page.html#section-4"></a>
+						    </div>
+					    </div>
+				    </div>
+				    <div class="col-12 col-lg-4 py-3">
+					    <div class="card shadow-sm">
+						    <div class="card-body">
+							    <h5 class="card-title mb-3">
+								    <span class="theme-icon-holder card-icon-holder mr-2">
+								        <i class="fas fa-tools"></i>
+							        </span>
+									<span class="card-title-text">Traefik</span>
+							    </h5>
+							    <div class="card-text">
+								    Traefik es un balanceador y un reverse proxy que nos permite redirigir peticiones mediante una URL, es por eso que hemos creado los registros *.rock.com a los dos workers por que en cuanto lleguen a los nodos Traefki se encarga de redirigir la petición al contenedor deseado. ver más...					    
+								</div>
+							    <a class="card-link-mask" href="docs-page.html#section-5"></a>
+						    </div>
+					    </div>
+				    </div>
+				    <div class="col-12 col-lg-4 py-3">
+					    <div class="card shadow-sm">
+						    <div class="card-body">
+							    <h5 class="card-title mb-3">
+								    <span class="theme-icon-holder card-icon-holder mr-2">
+								        <i class="fas fa-laptop-code"></i>
+							        </span>
+							        <span class="card-title-text">Web</span>
+							    </h5>
+							    <div class="card-text">
+								    Las tecnologías que hemos empleado para la web son HTML, CSS, JavaScript para el front-end utilizando la plantilla <a href="https://github.com/BlackrockDigital/startbootstrap-sb-admin-2" target="_blank">SB Admin 2</a> y para la documentación la plantilla <a href="https://github.com/xriley/CoderDocs-Theme" target="_blank">CoderDocs Theme</a>. Y para
+						el back-end PHP y MySQL. ver más...						    
+								</div>
+							    <a class="card-link-mask" href="docs-page.html#section-6"></a>
+						    </div>
+					    </div>
+				    </div>
+				    <div class="col-12 col-lg-5 py-3">
+					    <div class="card shadow-sm">
+						    <div class="card-body">
+							    <h5 class="card-title mb-3">
+								    <span class="theme-icon-holder card-icon-holder mr-2">
+								        <i class="fas fa-lightbulb"></i>
+							        </span>
+							        <span class="card-title-text">Despliege de contenedores</span>
+							    </h5>
+							    <div class="card-text">
+								    Ahora explicaremos cómo hemos hecho para desplegar los contenedores cuando los usuarios se registran. ver más...						    
+								</div>
+							    <a class="card-link-mask" href="docs-page.html#section-8"></a>
+						    </div>
+					    </div>
+				    </div>
+			    </div>
+		    </div>
+		</div>
+    </div>
+    <section class="cta-section text-center py-5 theme-bg-dark position-relative">
+	    <div class="theme-bg-shapes-right"></div>
+	    <div class="theme-bg-shapes-left"></div>
+	    <div class="container">
+		    <h3 class="mb-2 text-white mb-3">The Rock Project</h3>
+		    
+	    </div>
+    </section>
+    <footer class="footer">
+	    <div class="footer-bottom text-center py-5">
+		    <ul class="social-list list-unstyled pb-4 mb-0">
+			    <li class="list-inline-item"><a href="https://github.com/Alopezfu/therockproject" target="_blank"><i class="fab fa-github fa-fw"></i></a></li> 
+	        </ul>
+	        <small class="copyright">Documentado por <a class="theme-link" href="https://github.com/Alopezfu" target="_blank">Alejandro López</a> y <a class="theme-link" href="https://github.com/Arsenbasha" target="_blank">Leandro Paredes</a></small>
+	    </div>
+    </footer>
+    <script src="assets/plugins/jquery-3.4.1.min.js"></script>
+    <script src="assets/plugins/popper.min.js"></script>
+    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>
