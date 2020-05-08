@@ -1,0 +1,36 @@
+main{
+
+    margin: 50px auto;
+    width: 900px;
+}
+
+table{
+
+    width: 100%;
+    color: #fff;
+    background-color: rgba(47, 54, 64, 0.97);
+}
+
+td{
+
+    padding: 20px;
+}
+
+thead td{
+
+    border-bottom: solid 3px #fff;
+}
+
+#user{
+
+    padding: 10px;
+    margin-top: 20px;
+    text-align: center;
+    background-color: rgba(47, 54, 64, 0.97);
+    color: #fff;
+}
+
+#user a{
+
+    color: #fff;
+}
