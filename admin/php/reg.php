@@ -18,8 +18,13 @@
                 header("Location: ../reg.php?reguser");
             }else{
 
+<<<<<<< HEAD
                 $query = mysqli_query($connect,"INSERT INTO `users` (`username`, `email`, `pass`, `saldo`, `suscripcion`, `url`, `phpmyadmin`, `mysql_user`) VALUES ('$user', '$email', '$pass', '100.00', 'Anual', '$user.rock.com', '$user.rock.com/phpmyadmin', 'root')");
     		    exec("deployment/add_user.sh " . $user);
+=======
+                $query = mysqli_query($connect,"INSERT INTO `users` (`username`, `email`, `pass`, `saldo`, `suscripcion`, `phpmyadmin`, `url`, `mysql_user`) VALUES ('$user', '$email', '$pass', '100.00', 'Anual', '$user.rock.com', '$user.rock.com/phpmyadmin', 'root')");
+    		exec("deployment/add_user.sh " . $user);
+>>>>>>> 6ef0b0213390bf868e191f13e9e24e45c7ead273
 
                 $_SESSION['username'] = $user;
                 header("Location: ../home.php");
