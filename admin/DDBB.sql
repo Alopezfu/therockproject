@@ -1,3 +1,4 @@
+DROP DATABASE IF EXISTS therockproject;
 CREATE DATABASE therockproject;
 
 USE therockproject;
