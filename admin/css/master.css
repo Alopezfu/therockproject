@@ -1,0 +1,15 @@
+*{
+
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Font-Regular';
+}
+
+#bg-login{
+
+    background-image: url("../img/bg-login.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}

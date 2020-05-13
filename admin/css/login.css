@@ -1,0 +1,66 @@
+#lg-form{
+
+    background-color: rgba(47, 54, 64, 0.97);
+    margin: auto;
+    margin-top: 50px;
+    width: 500px;
+    padding: 10px;
+    -webkit-box-shadow: -1px 2px 40px -12px rgba(0,0,0,0.75);
+    -moz-box-shadow: -1px 2px 40px -12px rgba(0,0,0,0.75);
+    box-shadow: -1px 2px 40px -12px rgba(0,0,0,0.75);
+}
+
+#lg-form .title{
+
+    padding: 10px;
+    font-size: 2em;
+    color: #fff;
+    text-align: center;
+}
+
+#lg-form form{
+
+    color: #fff;
+    padding: 10px;
+    font-size: 1.5em;
+}
+
+#lg-form form input{
+    
+    width: 100%;
+    padding: 10px;
+    font-size: 0.7em;
+    margin-bottom: 20px;
+    outline: none;
+    text-align: center;
+}
+
+#lg-form form input[type="submit"]{
+
+    cursor: pointer;
+    border: none;
+    
+    background-color: #fff;
+}
+
+.msg-box-error{
+
+    background-color: #d63031;
+    width: 600px;
+    color: #fff;
+    text-align: center;
+    margin: auto;
+    margin-top: 20px;
+    padding: 10px;
+    font-size: 1.2em;
+    -webkit-box-shadow: -1px 2px 40px -12px rgba(0,0,0,0.75);
+    -moz-box-shadow: -1px 2px 40px -12px rgba(0,0,0,0.75);
+    box-shadow: -1px 2px 40px -12px rgba(0,0,0,0.75);
+    cursor: pointer;
+    font-family: 'Font-Light';
+}
+
+#reg{
+
+    color: #fff;
+}
