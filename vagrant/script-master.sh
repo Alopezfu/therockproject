@@ -64,6 +64,15 @@ function configBind9(){
     service bind9 restart
 }
 
+function configMysql(){
+
+    echo -e "CREATE DATABASE therockproject;
+CREATE USER 'dev'@'localhost' IDENTIFIED BY 'dev';
+GRANT ALL PRIVILEGES ON therockproject.* TO 'dev'@'localhost';" > script.sql
+    mysql < script.sql
+    rm script.sql
+}
+
 function configApache(){
 
     echo -e "<VirtualHost *:80>
@@ -78,15 +87,6 @@ function configApache(){
     chown www-data:www-data /var/www/html -R
     chmod 755 /var/www/html -R
     rm -rf therockproject
-}
-
-function configMysql(){
-
-    echo -e "CREATE DATABASE therockproject;
-CREATE USER 'dev'@'localhost' IDENTIFIED BY 'dev';
-GRANT ALL PRIVILEGES ON therockproject.* TO 'dev'@'localhost';" > script.sql
-    mysql < script.sql
-    rm script.sql
 }
 
 function main(){
