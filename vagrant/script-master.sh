@@ -72,6 +72,22 @@ GRANT ALL PRIVILEGES ON therockproject.* TO 'dev'@'localhost';" > script.sql
     rm script.sql
 }
 
+function configApache(){
+
+    echo -e "<VirtualHost *:80>
+    DocumentRoot /var/www/html
+    ErrorDocument 404 /404.html
+</VirtualHost>" > /etc/apache2/sites-available/000-default.conf
+
+    rm /var/www/html/index.html
+    git clone https://github.com/Alopezfu/therockproject.git
+    cp -r therockproject/admin/* /var/www/html
+    mysql < /var/www/html/DDBB.sql
+    chown www-data:www-data /var/www/html -R
+    chmod 755 /var/www/html -R
+    rm -rf therockproject
+}
+
 function main(){
 
     apt update
