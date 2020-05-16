@@ -21,6 +21,11 @@ thead td{
     border-bottom: solid 3px #fff;
 }
 
+tbody td a{
+
+    color: #fff;
+}
+
 #user{
 
     padding: 10px;
