@@ -88,6 +88,11 @@ function configApache(){
     rm -rf therockproject
 }
 
+function swap(){
+
+    swapoff -a
+}
+
 function main(){
 
     apt update
@@ -100,6 +105,8 @@ function main(){
     configBind9
     configMysql
     configApache
+
+    swap
 }
 
 main
