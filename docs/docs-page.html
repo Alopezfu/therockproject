@@ -339,16 +339,12 @@
 					    <h1 class="docs-heading">Creación del clúster</h1>
 					    <section class="docs-intro">
 						    <p>Antes de crear el cluster hemos de deshabilitar la memoria swap <strong>en todos los nodos</strong>, puesto que es un requerimiento en el cluster de kubernetes.</p>
-							<p>Con swapoff lo deshabilitamos en la sesión actual y comentado la línea de swap en /etc/fstab lo aplicamos de manera permanente.</p>
+							<p>Con swapoff deshabilitamos la swap del sistema.</p>
 							<div class="docs-code-block">
 								<pre class="shadow-lg rounded"><code class="json hljs"><span class="hljs-attr">kube@kube-master:~$ </span>sudo swapoff -a</code></pre>
 							</div>
 							<div class="docs-code-block">
 								<pre class="shadow-lg rounded"><code class="json hljs"><span class="hljs-attr">kube@kube-master:~$ </span>sudo nano /etc/fstab</code></pre>
-							</div>
-							<p>Ejemplo /etc/fstab</p>
-							<div class="docs-code-block">
-								<img src="img/fstab/1.png">
 							</div>
 						</section>
 				    </header>
