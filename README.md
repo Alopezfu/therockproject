@@ -18,6 +18,6 @@ cd therockproject/vagrant
 vagrant up
 ```
 
-El proceso es algo demorado, puesto que se aplican todos los pasos mostrados en la documentación oficial.
+El proceso es algo demorado puesto que se aplican todos los pasos mostrados en la documentación oficial.
 Para obtener la shell:
 vagrant ssh kubeMaster/kubeWorker1/kubeWorker2

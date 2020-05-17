@@ -6,6 +6,19 @@ function installDocker(){
     apt install docker.io -y
     usermod -aG docker $USER
     systemctl enable docker
+    echo -e '
+{
+    "exec-opts": ["native.cgroupdriver=systemd"],
+    "log-driver": "json-file",
+    "log-opts": {
+        "max-size": "100m"
+},
+    "storage-driver": "overlay2"
+}' > /etc/docker/daemon.json
+
+    mkdir -p /etc/systemd/system/docker.service.d
+    systemctl daemon-reload
+    systemctl restart docker
 }
 
 function installKubernetes(){
@@ -93,13 +106,24 @@ function swap(){
     swapoff -a
 }
 
+function sshSetup(){
+
+    ssh-keygen -t rsa -N '' -f ~/.ssh/id_rsa <<< y
+    apt install sshpass -y
+    sshpass -p "vagrant" ssh-copy-id -o StrictHostKeyChecking=no vagrant@192.168.1.6
+    # sshpass -p "vagrant" ssh-copy-id -o StrictHostKeyChecking=no vagrant@192.168.1.7
+}
+
 function cluster(){
 
-    kubeadm init --pod-network-cidr=10.244.0.0/16 > joinOut
-    cat joinOut | tail -2 > joinOut
+    kubeadm init --pod-network-cidr=10.244.0.0/16 > salida
+    cat salida | tail -2 > joinOut
     mkdir -p $HOME/.kube
     cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
     chown $(id -u):$(id -g) $HOME/.kube/config
+    scp joinOut vagrant@192.168.1.6:/home/vagrant/
+    ssh vagrant@192.168.1.6 chmod +x ./joinOut
+    ssh vagrant@192.168.1.6 sudo ./joinOut
 }
 
 function main(){
@@ -110,6 +134,7 @@ function main(){
     installKubernetes
     installBind9
     installLAMP
+    sshSetup
 
     configBind9
     configMysql

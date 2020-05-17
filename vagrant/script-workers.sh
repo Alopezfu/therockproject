@@ -5,6 +5,19 @@ function installDocker(){
     apt install docker.io -y
     usermod -aG docker $USER
     systemctl enable docker
+    echo -e '
+{
+    "exec-opts": ["native.cgroupdriver=systemd"],
+    "log-driver": "json-file",
+    "log-opts": {
+        "max-size": "100m"
+},
+    "storage-driver": "overlay2"
+}' > /etc/docker/daemon.json
+
+    mkdir -p /etc/systemd/system/docker.service.d
+    systemctl daemon-reload
+    systemctl restart docker
 }
 
 function installKubernetes(){
@@ -15,12 +28,18 @@ function installKubernetes(){
     apt install kubeadm -y
 }
 
+function swap(){
+
+    swapoff -a
+}
+
 function main(){
 
     apt update
     apt upgrade -y
     installDocker
-    installKubernetes    
+    installKubernetes
+    swap   
 }
 
 main
