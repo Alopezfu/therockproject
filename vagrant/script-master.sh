@@ -116,7 +116,7 @@ function sshSetup(){
 
 function cluster(){
 
-    kubeadm init --pod-network-cidr=10.244.0.0/16 > salida
+    kubeadm init --pod-network-cidr=10.244.0.0/16 --v=5 > salida
     cat salida | tail -2 > joinOut
     mkdir -p $HOME/.kube
     cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
@@ -124,6 +124,9 @@ function cluster(){
     scp joinOut vagrant@192.168.1.6:/home/vagrant/
     ssh vagrant@192.168.1.6 chmod +x ./joinOut
     ssh vagrant@192.168.1.6 sudo ./joinOut
+    rm joinOut salida
+    kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
+    kubectl apply -f https://raw.githubusercontent.com/Alopezfu/therockproject/master/traefik/apply-traefik.yml
 }
 
 function main(){
