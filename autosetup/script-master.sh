@@ -104,6 +104,7 @@ function configApache(){
 function swap(){
 
     swapoff -a
+    sed -i '$ d' /etc/fstab
 }
 
 function sshSetup(){
