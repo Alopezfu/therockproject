@@ -31,6 +31,7 @@ function installKubernetes(){
 function swap(){
 
     swapoff -a
+    sed -i '$ d' /etc/fstab
 }
 
 function main(){
