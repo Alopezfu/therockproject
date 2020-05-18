@@ -110,8 +110,8 @@ function sshSetup(){
 
     ssh-keygen -t rsa -N '' -f ~/.ssh/id_rsa <<< y
     apt install sshpass -y
-    sshpass -p "vagrant" ssh-copy-id -o StrictHostKeyChecking=no vagrant@192.168.1.6
-    # sshpass -p "vagrant" ssh-copy-id -o StrictHostKeyChecking=no vagrant@192.168.1.7
+    sshpass -p "kube" ssh-copy-id -o StrictHostKeyChecking=no kube@192.168.1.6
+    # sshpass -p "kube" ssh-copy-id -o StrictHostKeyChecking=no kube@192.168.1.7
 }
 
 function cluster(){
@@ -121,9 +121,9 @@ function cluster(){
     mkdir -p $HOME/.kube
     cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
     chown $(id -u):$(id -g) $HOME/.kube/config
-    scp joinOut vagrant@192.168.1.6:/home/vagrant/
-    ssh vagrant@192.168.1.6 chmod +x ./joinOut
-    ssh vagrant@192.168.1.6 sudo ./joinOut
+    scp joinOut kube@192.168.1.6:/home/kube/
+    ssh kube@192.168.1.6 chmod +x ./joinOut
+    ssh kube@192.168.1.6 sudo ./joinOut
     rm joinOut salida
     kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
     kubectl apply -f https://raw.githubusercontent.com/Alopezfu/therockproject/master/traefik/apply-traefik.yml
