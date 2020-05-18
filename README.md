@@ -14,16 +14,14 @@ Hemos decidido autorizar el desplegué completo del proyecto con Bash, puedes le
 
 Workers primero:
 ```bash
-git clone https://github.com/Alopezfu/therockproject.git
-cd therockproject/autosetup
+wget https://raw.githubusercontent.com/Alopezfu/therockproject/master/autosetup/script-workers.sh
 chmod +x ./script-workers.sh
 sudo ./$_
 ```
 
 Una vez ejecutada la parte de los workeres, en el master:
 ```bash
-git clone https://github.com/Alopezfu/therockproject.git
-cd therockproject/autosetup
+wget https://raw.githubusercontent.com/Alopezfu/therockproject/master/autosetup/script-master.sh
 chmod +x ./script-master.sh
 sudo ./$_
 ```
