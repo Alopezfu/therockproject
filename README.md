@@ -8,16 +8,22 @@ En este proyecto explicamos como levantar tu propio cluster de kubernetes y te c
 
 Una vez creado el cluster puedes levantar la web hacindo un clon de este repo y ponindo el contendio de la carpeta admin en tu web para que los usuarios se registren!
 
-## Vagrant
+## Autos setup del proyecto
 
-Hemos decidido autorizar el desplegué completo del proyecto con la ayuda de Vagrant, puedes levantar el proyecto con esta simple secuencia de comandos:
+Hemos decidido autorizar el desplegué completo del proyecto con Bash, puedes levantar el proyecto con esta simple secuencia de comandos (primero debes constar con el sistema operativo instalado y la configuración de red que se muestra en los docs oficiales):
 
+Workers primero:
 ```bash
 git clone https://github.com/Alopezfu/therockproject.git
-cd therockproject/vagrant
-vagrant up
+cd therockproject/autosetup
+chmod +x ./script-workers.sh
+sudo ./$_
 ```
 
-El proceso es algo demorado puesto que se aplican todos los pasos mostrados en la documentación oficial.
-Para obtener la shell:
-vagrant ssh kubeMaster/kubeWorker1/kubeWorker2
+Una vez ejecutada la parte de los workeres, en el master:
+```bash
+git clone https://github.com/Alopezfu/therockproject.git
+cd therockproject/autosetup
+chmod +x ./script-master.sh
+sudo ./$_
+```
