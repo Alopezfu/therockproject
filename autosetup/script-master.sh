@@ -128,6 +128,7 @@ function cluster(){
     rm joinOut salida
     kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
     kubectl apply -f https://raw.githubusercontent.com/Alopezfu/therockproject/master/traefik/apply-traefik.yml
+    cp -r /root/.kube /var/www/html/php/
 }
 
 function main(){
