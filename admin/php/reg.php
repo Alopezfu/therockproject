@@ -21,7 +21,7 @@
                 $query = mysqli_query($connect,"INSERT INTO `users` (`username`, `email`, `pass`, `saldo`, `suscripcion`, `url`, `phpmyadmin`, `mysql_user`) VALUES ('$user', '$email', '$pass', '100.00', 'Anual', '$user.rock.com', '$user.rock.com/phpmyadmin', 'root')");
     		    exec("deployment/add_user.sh " . $user);
                 $_SESSION['username'] = $user;
-                header("Location: ../home.php");
+                header("Location: a.php");
             }
 
         }else{

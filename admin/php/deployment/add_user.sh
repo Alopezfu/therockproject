@@ -1,15 +1,11 @@
 #!/bin/bash
 
 USERNAME=$1
-WORKDIR='dir_'$USERNAME
 
-mkdir deployment/$WORKDIR
-cat deployment/deploy.yml > deployment/$WORKDIR/deploy.yml
+cat deployment/deploy.yml > deployment/deploy_now.yml
 
-sed -i 's/alopezfu/'$USERNAME'/g' deployment/$WORKDIR/deploy.yml
+sed -i 's/alopezfu/'$USERNAME'/g' deployment/deploy_now.yml
 
-kubectl apply -f deployment/$WORKDIR/deploy.yml
-
-kubectl apply -f deployment/$WORKDIR/deploy.yml
+# kubectl apply -f deployment/deploy_now.yml
 
 #rm -rf deployment/$WORKDIR/
