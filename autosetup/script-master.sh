@@ -109,8 +109,8 @@ function sshSetup(){
 
     ssh-keygen -t rsa -N '' -f ~/.ssh/id_rsa <<< y
     apt install sshpass -y
-    sshpass -p "kube" ssh-copy-id -o StrictHostKeyChecking=no kube@192.168.1.6
-    sshpass -p "kube" ssh-copy-id -o StrictHostKeyChecking=no kube@192.168.1.7
+    sshpass -p "kube" ssh-copy-id kube@192.168.1.6
+    sshpass -p "kube" ssh-copy-id kube@192.168.1.7
 }
 
 function cluster(){
