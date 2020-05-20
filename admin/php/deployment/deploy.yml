@@ -15,13 +15,13 @@ spec:
       containers:
         - name: lamp
           image: mattrayner/lamp
-          volumeMounts:
-            - name: alopezfu-pv
-              mountPath: /app
-      volumes:
-        - name: alopezfu-pv
-          persistentVolumeClaim:
-            claimName: alopezfu-pvc
+     #     volumeMounts:
+     #       - name: alopezfu-pv
+     #         mountPath: /app
+     # volumes:
+     #   - name: alopezfu-pv
+     #     persistentVolumeClaim:
+     #       claimName: alopezfu-pvc
 ---
 apiVersion: extensions/v1beta1
 kind: Ingress
