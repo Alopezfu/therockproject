@@ -10,7 +10,7 @@ Una vez creado el cluster puedes levantar la web hacindo un clon de este repo y 
 
 ## Autos setup del proyecto
 
-Hemos decidido autorizar el desplegué completo del proyecto con Bash, puedes levantar el proyecto con esta simple secuencia de comandos (primero debes constar con el sistema operativo instalado y la configuración de red que se muestra en los docs oficiales):
+Hemos decidido autorizar el desplegué completo del proyecto con Bash, puedes levantar el proyecto con esta simple secuencia de comandos (primero debes contar con el sistema operativo instalado y la configuración de red que se muestra en los docs oficiales):
 
 Workers primero:
 ```bash
