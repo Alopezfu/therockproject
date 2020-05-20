@@ -110,7 +110,7 @@ function sshSetup(){
     ssh-keygen -t rsa -N '' -f ~/.ssh/id_rsa <<< y
     apt install sshpass -y
     sshpass -p "kube" ssh-copy-id -o StrictHostKeyChecking=no kube@192.168.1.6
-    # sshpass -p "kube" ssh-copy-id -o StrictHostKeyChecking=no kube@192.168.1.7
+    sshpass -p "kube" ssh-copy-id -o StrictHostKeyChecking=no kube@192.168.1.7
 }
 
 function cluster(){
@@ -123,6 +123,9 @@ function cluster(){
     scp joinOut kube@192.168.1.6:/home/kube/
     ssh kube@192.168.1.6 chmod +x ./joinOut
     ssh kube@192.168.1.6 sudo ./joinOut
+    scp joinOut kube@192.168.1.7:/home/kube/
+    ssh kube@192.168.1.7 chmod +x ./joinOut
+    ssh kube@192.168.1.7 sudo ./joinOut
     rm joinOut salida
     kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
     kubectl apply -f https://raw.githubusercontent.com/Alopezfu/therockproject/master/traefik/apply-traefik.yml
