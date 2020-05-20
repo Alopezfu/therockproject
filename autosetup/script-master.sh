@@ -96,8 +96,6 @@ function configApache(){
     git clone https://github.com/Alopezfu/therockproject.git
     cp -r therockproject/admin/* /var/www/html
     mysql < /var/www/html/DDBB.sql
-    chown www-data:www-data /var/www/html -R
-    chmod 755 /var/www/html -R
     rm -rf therockproject
 }
 
@@ -129,6 +127,8 @@ function cluster(){
     kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
     kubectl apply -f https://raw.githubusercontent.com/Alopezfu/therockproject/master/traefik/apply-traefik.yml
     cp -r /root/.kube /var/www/html/php/
+    chown www-data:www-data /var/www/html -R
+    chmod 755 /var/www/html -R
 }
 
 function main(){
