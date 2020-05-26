@@ -38,6 +38,7 @@ function installBind9(){
 function installLAMP(){
 
     apt install lamp-server^ -y
+
 }
 
 # Configuradores
@@ -48,7 +49,7 @@ function configBind9(){
     type master;
     file "/etc/bind/zonas/rock.db";
 };' > /etc/bind/named.conf.local
-    
+
     echo -e "\$TTL    604800
 @   IN  SOA rock.com. root.rock.com. (
                    2
@@ -57,17 +58,18 @@ function configBind9(){
              2419200
               604800 )
 ;
+
 @   IN  NS  rock.com.
-*   IN  A   192.168.1.5
-@   IN  A   192.168.1.5
-*   IN  A   192.168.1.6
-*   IN  A   192.168.1.7" > /etc/bind/zonas/rock.db
+rock.com.   IN  A   192.168.1.5
+*.rock.com.  IN  A   192.168.1.6
+*.rock.com.   IN  A   192.168.1.7" > /etc/bind/zonas/rock.db
 
     echo -e 'options {
     directory "/var/cache/bind";
     forwarders {
         8.8.8.8;
     };
+
     dnssec-validation auto;
     auth-nxdomain no;
     listen-on-v6 { any; };
@@ -81,6 +83,7 @@ function configMysql(){
     echo -e "CREATE DATABASE therockproject;
 CREATE USER 'dev'@'localhost' IDENTIFIED BY 'dev';
 GRANT ALL PRIVILEGES ON therockproject.* TO 'dev'@'localhost';" > script.sql
+    
     mysql < script.sql
     rm script.sql
 }
