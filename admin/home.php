@@ -27,7 +27,7 @@
                 <td><a href="http://<?= $result['url'] ?>" target="_blank"><?= $result['url'] ?></a></td>
                 <td><?= $result['mysql_user'] ?></td>
                 <td><?= $result['mysql_pass'] ?></td>
-                <td><a href="http://<?= $result['phpmyadmin'] ?>" target="_blank"><?= $result['phpmyadmin'] ?>/a></td>
+                <td><a href="http://<?= $result['phpmyadmin'] ?>" target="_blank"><?= $result['phpmyadmin'] ?></a></td>
                 <td><a href="php/delete.php?id=<?= $result['id'] ?>">Eliminar dominio</a></td>
             </tbody>
         </table>
