@@ -1,6 +1,5 @@
 #!/bin/bash
 
-# Instaladores:
 function installDocker(){
 
     apt install docker.io -y
@@ -137,6 +136,15 @@ function cluster(){
     chmod 755 /var/www/html -R
 }
 
+function nfs(){
+
+    mkdir /sitios
+    apt install nfs-kernel-server -y
+    echo -e "/sitios \t 192.168.1.0/24(rw,sync,no_subtree_check)" >> /etc/exports
+    exportfs -a 
+    systemctl restart nfs-kernel-server
+}
+
 function main(){
 
     apt update
@@ -153,6 +161,7 @@ function main(){
 
     swap
     cluster
+    nfs
 }
 
 main

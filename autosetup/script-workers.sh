@@ -40,7 +40,7 @@ function main(){
     apt upgrade -y
     installDocker
     installKubernetes
-    swap   
+    swap
 }
 
 main
