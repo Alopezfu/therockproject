@@ -1,10 +1,9 @@
 <?php
-$kubeconfig = "/var/www/html/php/.kube/config"; // The config file
+$kubeconfig = "/var/www/html/php/.kube/config";
 
-putenv("KUBECONFIG=$kubeconfig"); // set the environment variable KUBECONFIG
+putenv("KUBECONFIG=$kubeconfig");
 
-$output = shell_exec("KUBECONFIG=$kubeconfig ; kubectl delete -f ./deployment/deploy_now.yml"); // Runs the command 
+$output = shell_exec("KUBECONFIG=$kubeconfig ; kubectl delete -f ./deployment/deploy_now.yml");
 
-// echo "<pre>$output</pre>"; // and return the expected output.
 header("Location: exit.php");
 ?>

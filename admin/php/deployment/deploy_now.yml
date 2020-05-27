@@ -1,0 +1,50 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pepq-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pepq
+  template:
+    metadata:
+      labels:
+        app: pepq
+    spec:
+      volumes:
+       - name: pepq-pv
+         hostPath:
+           path: /data/pepq
+      containers:
+        - name: lamp
+          image: mattrayner/lamp
+          volumeMounts:
+            - name: pepq-pv
+              mountPath: /app
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: pepq-ingress
+spec:
+  rules:
+  - host: pepq.rock.com
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: pepq-service
+          servicePort: port-apache
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: pepq-service
+spec:
+  selector:
+    app: pepq
+  ports:
+  - name: port-apache
+    port: 80
+    targetPort: 80

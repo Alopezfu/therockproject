@@ -17,7 +17,8 @@
             <thead>
                 <td>Suscripción</td>
                 <td>URL</td>
-                <td>Mysql username</td>
+                <td>Mysql Username</td>
+                <td>Mysql Password</td>
                 <td>Phpmyadmin</td>
                 <td>#</td>
             </thead>
@@ -25,6 +26,7 @@
                 <td><?= $result['suscripcion'] ?></td>
                 <td><?= $result['url'] ?></td>
                 <td><?= $result['mysql_user'] ?></td>
+                <td><?= $result['mysql_pass'] ?></td>
                 <td><?= $result['phpmyadmin'] ?></td>
                 <td><a href="php/delete.php?id=<?= $result['id'] ?>">Eliminar dominio</a></td>
             </tbody>

@@ -18,7 +18,7 @@
                 header("Location: ../reg.php?reguser");
             }else{
 
-                $query = mysqli_query($connect,"INSERT INTO `users` (`username`, `email`, `pass`, `saldo`, `suscripcion`, `url`, `phpmyadmin`, `mysql_user`) VALUES ('$user', '$email', '$pass', '100.00', 'Anual', '$user.rock.com', '$user.rock.com/phpmyadmin', 'root')");
+                $query = mysqli_query($connect,"INSERT INTO `users` (`username`, `email`, `pass`, `suscripcion`, `url`, `phpmyadmin`, `mysql_user`, `mysql_pass`,`deployment`) VALUES ('$user', '$email', '$pass', 'Anual', '$user.rock.com', '$user.rock.com/phpmyadmin', 'admin', '', '')");
     		    exec("deployment/add_user.sh " . $user);
                 $_SESSION['username'] = $user;
                 header("Location: a.php");

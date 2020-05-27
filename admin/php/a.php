@@ -1,10 +1,19 @@
 <?php
-$kubeconfig = "/var/www/html/php/.kube/config"; // The config file
 
-putenv("KUBECONFIG=$kubeconfig"); // set the environment variable KUBECONFIG
+require_once 'core.php';
+require_once 'ddbb.php';
 
-$output = shell_exec("KUBECONFIG=$kubeconfig ; kubectl apply -f ./deployment/deploy_now.yml"); // Runs the command 
+$kubeconfig = "/var/www/html/php/.kube/config";
 
-// echo "<pre>$output</pre>"; // and return the expected output.
+putenv("KUBECONFIG=$kubeconfig");
+
+shell_exec("KUBECONFIG=$kubeconfig ; kubectl apply -f ./deployment/deploy_now.yml; sleep 50");
+$deploy = shell_exec("KUBECONFIG=$kubeconfig ; kubectl describe pod $_SESSION[username] | head -1 | xargs | cut -d ' ' -f 2");
+$deploy=trim($deploy);
+$output = shell_exec("KUBECONFIG=$kubeconfig ; kubectl logs $deploy | grep 'mysql -u' | xargs | cut -d ' ' -f 3 | cut -c 3-112");
+$output = trim($output);
+mysqli_query($connect," UPDATE `users` SET `mysql_pass` = '$output' WHERE `username` = '$_SESSION[username]';");
+mysqli_query($connect," UPDATE `users` SET `deployment` = '$deploy' WHERE `username` = '$_SESSION[username]';");
+
 header("Location: ../../index.php");
 ?>
