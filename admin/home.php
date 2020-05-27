@@ -24,10 +24,10 @@
             </thead>
             <tbody>
                 <td><?= $result['suscripcion'] ?></td>
-                <td><?= $result['url'] ?></td>
+                <td><a href="http://<?= $result['url'] ?>"><?= $result['url'] ?></a></td>
                 <td><?= $result['mysql_user'] ?></td>
                 <td><?= $result['mysql_pass'] ?></td>
-                <td><?= $result['phpmyadmin'] ?></td>
+                <td><a href="http://<?= $result['phpmyadmin'] ?>"><?= $result['phpmyadmin'] ?>/a></td>
                 <td><a href="php/delete.php?id=<?= $result['id'] ?>">Eliminar dominio</a></td>
             </tbody>
         </table>
