@@ -42,7 +42,7 @@ function main(){
     installKubernetes
     swap
     # NFS
-    apt install cifs-utils
+    apt install cifs-utils -y
     mkdir /data
 }
 
