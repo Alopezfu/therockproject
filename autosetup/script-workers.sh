@@ -43,6 +43,7 @@ function main(){
     swap
     # NFS
     apt install cifs-utils
+    mkdir /data
 }
 
 main
