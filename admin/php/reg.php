@@ -3,7 +3,7 @@
     require_once 'core.php';
     require_once 'ddbb.php';
 
-    $user = trim($_POST['user']);
+    $user = trim(strtolower($_POST['user']));
     $pass = trim($_POST['pass']);
     $email = trim($_POST['email']);
 
