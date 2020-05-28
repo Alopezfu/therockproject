@@ -41,6 +41,8 @@ function main(){
     installDocker
     installKubernetes
     swap
+    # NFS
+    apt install cifs-utils
 }
 
 main
