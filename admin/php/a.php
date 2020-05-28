@@ -7,7 +7,7 @@ $kubeconfig = "/var/www/html/php/.kube/config";
 
 putenv("KUBECONFIG=$kubeconfig");
 
-shell_exec("KUBECONFIG=$kubeconfig ; kubectl apply -f ./deployment/deploy_now.yml; sleep 50");
+shell_exec("KUBECONFIG=$kubeconfig ; kubectl apply -f ./deployment/deploy_now.yml; sleep 5");
 shell_exec("mkdir /sitios/$_SESSION[username]");
 $deploy = shell_exec("KUBECONFIG=$kubeconfig ; kubectl describe pod $_SESSION[username] | head -1 | xargs | cut -d ' ' -f 2");
 $deploy=trim($deploy);
