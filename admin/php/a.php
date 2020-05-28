@@ -2,6 +2,7 @@
 
 require_once 'core.php';
 require_once 'ddbb.php';
+checkLogin(true);
 
 $kubeconfig = "/var/www/html/php/.kube/config";
 

@@ -19,12 +19,15 @@
                 <td>URL</td>
                 <td>Mysql Username</td>
                 <td>Mysql Password</td>
+                <td>Mysql Host</td>
+                <td>Files</td>
                 <td>Phpmyadmin</td>
                 <td>#</td>
             </thead>
             <tbody>
                 <td><?= $result['suscripcion'] ?></td>
                 <td><a href="http://<?= $result['url'] ?>" target="_blank"><?= $result['url'] ?></a></td>
+                <td>localhost</a></td>
                 <td><?= $result['mysql_user'] ?></td>
                 <td>
                     <?php
@@ -37,6 +40,7 @@
                         }
                     ?>
                 </td>
+                <td><a href="files.php">Ir</a></td>
                 <td><a href="http://<?= $result['phpmyadmin'] ?>" target="_blank"><?= $result['phpmyadmin'] ?></a></td>
                 <td><a href="php/delete.php?id=<?= $result['id'] ?>">Eliminar dominio</a></td>
             </tbody>
