@@ -12,16 +12,17 @@ spec:
       labels:
         app: alopezfu
     spec:
-      volumes:
-       - name: alopezfu-pv
-         hostPath:
-           path: /data/alopezfu
       containers:
         - name: lamp
           image: mattrayner/lamp
           volumeMounts:
-            - name: alopezfu-pv
+            - name: alopezfu-pvc
               mountPath: /app
+      volumes:
+        - name: alopezfu-pvc
+          hostPath:
+            path: /data/alopezfu
+            type: Directory
 ---
 apiVersion: extensions/v1beta1
 kind: Ingress
