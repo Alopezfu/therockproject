@@ -13,3 +13,13 @@
     background-attachment: fixed;
     background-position: center;
 }
+
+.e404{
+
+    color: #fff;
+    text-align: center;
+    font-size: 3em;
+    margin: 50px auto;
+    background-color: #000;
+    font-family: Arial, Helvetica, sans-serif;
+}
