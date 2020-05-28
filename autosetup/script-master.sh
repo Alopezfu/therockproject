@@ -139,10 +139,13 @@ function cluster(){
 function nfs(){
 
     mkdir /sitios
+    chown www-data:root /sitios/ -R
     apt install nfs-kernel-server -y
     echo -e "/sitios \t 192.168.1.0/24(rw,sync,no_subtree_check)" >> /etc/exports
     exportfs -a 
     systemctl restart nfs-kernel-server
+    ssh kube@192.168.1.6 sudo mount 192.168.1.5:/sitios /data
+    ssh kube@192.168.1.7 sudo mount 192.168.1.5:/sitios /data
 }
 
 function main(){
