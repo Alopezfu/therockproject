@@ -2,6 +2,7 @@
     apt install docker.io -y
     usermod -aG docker $USER
     systemctl enable docker
+    chown /etc/docker kube:kube -R
     echo -e '
 {
     "exec-opts": ["native.cgroupdriver=systemd"],
@@ -11,7 +12,7 @@
 },
     "storage-driver": "overlay2"
 }' > /etc/docker/daemon.json
-
+    chown /etc/docker root:root -R
     mkdir -p /etc/systemd/system/docker.service.d
     systemctl daemon-reload
     systemctl restart docker
