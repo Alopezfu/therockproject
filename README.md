@@ -18,5 +18,5 @@ En el master:
 ```bash
 wget https://raw.githubusercontent.com/Alopezfu/therockproject/master/autosetup/script.sh
 chmod +x ./script.sh
-sudo ./$_
+./$_
 ```
