@@ -26,3 +26,8 @@ EOF
 
 # NFS
     apt install cifs-utils nfs-common -y
+    
+# SWAP
+    echo ' --- Disable Swap ---'
+    sudo swapoff -a
+    sudo sed -i '$ d' /etc/fstab
