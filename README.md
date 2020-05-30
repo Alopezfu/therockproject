@@ -1,5 +1,7 @@
 # The Rock Project
 
+![alt text](https://github.com/Alopezfu/therockproject/blob/master/docs/img/1.png "Logo")
+
 En este proyecto explicamos como levantar tu propio cluster de kubernetes y te cedmos todo el codigo fuente para que tu puedeas hostear paginas a todo el mundo!!
 
 	> La documentación está en https://alopezfu.github.io/therockproject/
