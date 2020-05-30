@@ -39,13 +39,6 @@ function installMaster(){
     sudo apt install lamp-server^ -y
 }
 
-function swap(){
-
-    echo ' --- Disable Swap ---'
-    sudo swapoff -a
-    sudo sed -i '$ d' /etc/fstab
-}
-
 function sshCopy(){
 
     echo ' --- Copy SSH Keys ---'
@@ -168,7 +161,6 @@ function main(){
         install
         installOnWorkers
         installMaster
-        swap
         configMaster
         nfs
         cluster
