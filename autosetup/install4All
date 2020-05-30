@@ -2,7 +2,7 @@
     apt install docker.io -y
     usermod -aG docker $USER
     systemctl enable docker
-    chown /etc/docker kube:kube -R
+    chown kube:kube /etc/docker -R
     sudo cat << EOF > /etc/docker/daemon.json
 {
     "exec-opts": ["native.cgroupdriver=systemd"],
