@@ -77,8 +77,8 @@ rock.com.   IN  A   192.168.1.5
 EOF
 
     sudo cat << EOF > /etc/bind/named.conf.options
-    directory "/var/cache/bind";
 options {
+    directory "/var/cache/bind";
     forwarders {
         8.8.8.8;
     };
