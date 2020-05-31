@@ -61,7 +61,7 @@ function configMaster(){
 EOF
 
     sudo cat << EOF > /etc/bind/zonas/rock.db 
-$TTL    604800
+\$TTL    604800
 @   IN  SOA rock.com. root.rock.com. (
                    2
               604800
@@ -78,6 +78,7 @@ EOF
 
     sudo cat << EOF > /etc/bind/named.conf.options
     directory "/var/cache/bind";
+options {
     forwarders {
         8.8.8.8;
     };
