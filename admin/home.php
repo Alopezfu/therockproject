@@ -17,9 +17,9 @@
             <thead>
                 <td>Suscripción</td>
                 <td>URL</td>
-                <td>Mysql Username</td>
-                <td>Mysql Password</td>
                 <td>Mysql Host</td>
+                <td>Mysql User</td>
+                <td>Mysql Password</td>
                 <td>Files</td>
                 <td>Phpmyadmin</td>
                 <td>#</td>
